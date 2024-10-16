@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Image</title>
+</head>
+<body bgcolor="cream">
+       
+       <h1>***Student Record with Image***</h1>
+        <table border="3" bgcolor="pink">
+            <tr>
+                <th>Name</th>
+                <td>{{stu.name}}</td>
+            </tr>
+
+            <tr>
+                <th>Age</th>
+                <td>{{stu.age}}</td>
+            </tr>
+
+            <tr>
+                <th>Mobileno</th>
+                <td>{{stu.mobileno}}</td>
+            </tr>
+
+            <tr>
+                <th>Dob</th>
+                <td>{{stu.dob}}</td>
+            </tr>
+
+            <tr>
+                <th>Pic</th>
+                <td><img src="{{stu.pic.url}}" alt="pic" height="250px" width="250px"></td>
+            </tr>
+        </table>
+
+</body>
+</html>

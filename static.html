@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static page</title>
+    <!-- <link rel="stylesheet" href="http://127.0.0.1:8000/static/SMS/css/home.css"> -->
+     <link rel="stylesheet" href="{% static 'SMS/css/home.css' %}">
+</head>
+<body>
+    <h1>This Example of Static page = js,css,images</h1>
+   <marquee>
+    <img src="{% static 'SMS/images/images.png' %}"  alt="not found" height="300px" width="300px">
+    <img src="{% static 'SMS/images/kang.jpg' %}" alt="not found" height="300px" width="300px">
+    <img src="{% static 'SMS/images/pig.png' %}" alt="not found" height="300px" width="300px">
+</marquee>
+
+
+<button onclick="msg()">Click Me!!</button>
+
+<script src="{% static 'SMS/js/hello.js' %}"></script>
+</body>
+</html>

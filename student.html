@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+<body>
+    <h1>***Student Details by Course Name***</h1>
+    <form method="post">
+       
+        {% csrf_token %}
+        
+        Select Course:
+        <select name="crid">
+            {% for c in course %}
+            {% if c.id == courseid %}
+             <option value="{{c.id}}" selected>{{c.name}}</option>
+            {% else %}
+            <option value="{{c.id}}" >{{c.name}}</option>
+            {% endif %}
+
+            {% endfor %}
+        </select>
+          <br><br>
+        <button type="submit">Get Student Details</button><br><br>
+
+        <h1>We have follwing student of {{cname}} given below:-</h1>
+        <table border="3" bgcolor="pink">
+            <tr>
+            <th>S.NO</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mobileno</th>
+            <th>Created Date</th>
+        </tr>
+          {% for val in alval %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{val.name}}</td>
+            <td>{{val.age}}</td>
+            <td>{{val.mobileno}}</td>
+            <td>{{val.created_by}}</td>
+        </tr>
+        
+        {% empty %}
+        <tr >
+           <th colspan="5">NO Any Studnent Enlroled>></th> 
+
+        </tr>
+        {% endfor %}
+        </table>
+    </form>
+    
+</body>
+</html>

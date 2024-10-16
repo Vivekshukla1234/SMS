@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paytment</title>
+</head>
+<body bgcolor="cream">
+    <h1>***Student Wise Payment Details***</h1>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        Enter Your Student id:
+        <input type="text" name="txtsid"><br><br>
+        <button type="submit">PaymentDetails</button>
+        
+        <br><br>
+        <table border="3px" bgcolor="pink">
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Payment mode</th>
+                <th> Paymeny Date</th>
+            </tr>
+
+            {% for i in allp %}
+            <tr>
+              <td>{{forloop.counter}}</td>
+              <td>{{ stu.name }}</td>
+              <td>{{i.amount}}</td>
+              <td>{{i.payment_mode}}</td>
+              <td>{{i.payment_date}}</td> 
+            </tr>
+
+            {% endfor %}
+
+        </table>
+    </form>
+</body>
+</html>
